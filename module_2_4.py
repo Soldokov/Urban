@@ -9,16 +9,14 @@ not_primes = []
         if num % i == 0:
             return False
     return True
-    
-for num in numbers:
-    if num == 1:
-        continue
-    elif is_prime(num) and num != 1:
-        primes.append(num)
-    else:
-        not_primes.append(num)
+
+primes = [num for num in numbers if is_prime(num)]
+not_primes = [num for num in numbers if num > 1 and not is_prime(num)]
+
+
 print("Простые числа: ", primes)
-print("Непростые числа: ", not_primes)'''
+print("Непростые числа: ", not_primes)
+'''
 
 for num in numbers:
     if num == 1:
