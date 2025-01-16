@@ -208,6 +208,7 @@ fig2.update_layout(
 for annotations in fig2['layout']['annotations']: annotations['y'] += 0.05
 #-------------------------------------------------------------------------------- Первый график (Распределение оценок критиков)
 critic_score = cleaned_data['Critic_Score']
+
 fig2.add_trace(
     go.Histogram(
     x = critic_score,
@@ -317,7 +318,10 @@ fig2.update_yaxes(
     row=2, col=2
 )
 #--------------------------------------------------------------------------------- Отображение графиков
-print(cleaned_data.head())
+
 fig1.show()  # Отображаем 2D-графики
 fig2.show()  # Отображаем 2D-графики
 fig_3d.show()  # Отображаем 3D-график
+fig1.write_html('visualization.html')
+fig2.write_html('visualization2.html')
+fig_3d.write_html('visualization3.html')
